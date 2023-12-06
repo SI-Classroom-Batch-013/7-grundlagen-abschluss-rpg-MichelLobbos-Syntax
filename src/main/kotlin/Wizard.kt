@@ -5,41 +5,78 @@ class Wizard (name: String) : Held(name, 850) {
 
     }
 
-    fun heilzauberWizard() {
+    fun heilungWizard() {
         heilung(HEILUNGSWERT + 10)
 
     }
 
-    override fun verteidigungsSchild() {
-        verteidigungsSchild()
+//    override fun verteidigungsSchild() {
+//        verteidigungsSchild()
+//
+//    }
 
-    }
-
-    fun bonusSchadenWizard(ziel: Gegner) {
+    fun bonusAngriffWizard(ziel: Gegner) {
         bonusAngriff(ziel, BONUSSCHADENSWERT + 100)
 
     }
 
     fun aktionAussuchenWizard() {
-        println(MENÜ)
-        var auswahl = readln()
-        when (auswahl) {
-            "1" -> {
-                angriffWizard(GEGNER)
+
+        var menü = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+
+        println(menü)
+
+        repeat(4) {
+            var auswahl: String
+            while (true) {
+                auswahl = readln()
+                when (auswahl) {
+                    "1", "2", "3", "4" -> break
+                    else -> {
+                        println("Ungültige Eingabe. Bitte wählen Sie 1, 2, 3 oder 4.")
+                    }
+                }
             }
 
-            "2" -> {
-                heilzauberWizard()
-            }
+            when (auswahl) {
+                "1" -> {
+                    angriffWizard(GEGNER)
+                    menü = menü.replace("1 - Angriff", "X - Angriff")
+                    println(menü)
 
-            "3" -> {
-                verteidigungsSchild()
-            }
+                }
 
-            "4" -> {
-                bonusSchadenWizard(GEGNER)
+                "2" -> {
+                    heilungWizard()
+                    menü = menü.replace("2 - Heilung", "X - Heilung")
+                    println(menü)
+
+                }
+
+                "3" -> {
+                    verteidigungsSchild()
+                    menü = menü.replace("3 - VerteidigungSchild", "X - VerteidigungSchild")
+                    println(menü)
+
+                }
+
+                "4" -> {
+                    bonusAngriffWizard(GEGNER)
+                    menü = menü.replace("4 - Bonusangriff", "X - Bonusangriff")
+                    println(menü)
+
+
+                }
             }
         }
+        println("Wizard hat seine vier Aktionen benutzt")
+
+
     }
 
 }

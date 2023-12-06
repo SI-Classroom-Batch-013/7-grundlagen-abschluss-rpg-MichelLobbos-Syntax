@@ -31,10 +31,21 @@ open class Barbaren(name: String): Held(name, 750) {
              |3 - VerteidigungSchild
              |4 - Bonusangriff
          """.trimMargin()
-            println(menü)
-            repeat(4) {
 
-            var auswahl = readln()
+            println(menü)
+
+            repeat(4) {
+                var auswahl: String
+                while (true) {
+                    auswahl = readln()
+                    when (auswahl) {
+                        "1", "2", "3", "4" -> break
+                        else -> {
+                            println("Ungültige Eingabe. Bitte wählen Sie 1, 2, 3 oder 4.")
+                        }
+                    }
+                }
+
             when (auswahl) {
                 "1" -> {
                     angriffBarbar(GEGNER)
