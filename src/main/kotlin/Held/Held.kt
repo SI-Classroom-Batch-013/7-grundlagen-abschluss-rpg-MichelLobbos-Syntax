@@ -1,3 +1,7 @@
+package Held
+
+import Gegner
+
 open class Held(var name: String, var hp: Int) {
 
     var schutzzauberAktiv = false
@@ -6,6 +10,7 @@ open class Held(var name: String, var hp: Int) {
     open fun angriff(ziel: Gegner, schadenswert: Int) {
         ziel.hp -= schadenswert
         println("$name greift ${ziel.name} an und verursacht $schadenswert Schaden!")
+        println("${ziel.name} HP : ${ziel.hp}")
     }
 
 
@@ -24,4 +29,6 @@ open class Held(var name: String, var hp: Int) {
         ziel.hp -= bonusSchadenswert
         println("$name greift ${ziel.name} an und verursacht $bonusSchadenswert Schaden!")
     }
+
+
 }

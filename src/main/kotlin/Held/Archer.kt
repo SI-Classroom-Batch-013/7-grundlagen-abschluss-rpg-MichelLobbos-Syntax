@@ -1,4 +1,12 @@
-class Archer(name: String) : Held(name, 750) {
+package Held
+
+import BONUSSCHADENSWERT
+import GEGNER
+import Gegner
+import HEILUNGSWERT
+import SCHADENSWERT
+
+open class Archer(name: String) : Held(name, 550) {
 
     fun angriffArcher(ziel: Gegner) {
         angriff(ziel, SCHADENSWERT + 20)
@@ -22,6 +30,7 @@ class Archer(name: String) : Held(name, 750) {
 
 
     fun aktionAussuchenArcher() {
+        println("Held.Held.Archer soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
 
         var menü = """
              |1 - Angriff

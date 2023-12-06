@@ -1,4 +1,12 @@
-class Wizard (name: String) : Held(name, 850) {
+package Held
+
+import BONUSSCHADENSWERT
+import GEGNER
+import Gegner
+import HEILUNGSWERT
+import SCHADENSWERT
+
+open class Wizard (name: String) : Held(name, 450) {
 
     fun angriffWizard(ziel: Gegner) {
         angriff(ziel, SCHADENSWERT + 30)
@@ -21,6 +29,7 @@ class Wizard (name: String) : Held(name, 850) {
     }
 
     fun aktionAussuchenWizard() {
+        println("Held.Held.Wizard soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
 
         var menü = """
              |1 - Angriff

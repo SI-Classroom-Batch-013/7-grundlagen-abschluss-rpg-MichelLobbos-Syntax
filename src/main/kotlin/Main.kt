@@ -1,8 +1,13 @@
+import Held.Archer
+import Held.Barbaren
+import Held.Held
+import Held.Wizard
+
 var SCHADENSWERT = 200
 var HEILUNGSWERT = 50
 var BONUSSCHADENSWERT = 300
-val GEGNER = Gegner("Böser Goblin", 1000)
-var BARBAREN= Barbaren("Barbaren")
+val GEGNER = Gegner("Böser Goblin")
+var BARBAREN= Barbaren("Barbar")
 var ARCHER= Archer("Archer")
 var WIZARD: Wizard = Wizard("Wizard")
 var MENÜ =
@@ -33,7 +38,13 @@ var MENÜ =
      ╚═╝              ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝                                                   
                                                                                                                                                                       
     """.trimIndent()
-
+var HELDENLIST : MutableList<Held> = mutableListOf(BARBAREN,ARCHER,WIZARD)
+var HELDENMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
 fun main() {
 
     println("\u001B[32m"+"                                                         ██████╗ ██╗██████╗     ██╗██╗  ██╗███╗   ███╗\n" +
@@ -46,6 +57,6 @@ fun main() {
 
 
 
-
+println(HELDENLIST)
 
 }

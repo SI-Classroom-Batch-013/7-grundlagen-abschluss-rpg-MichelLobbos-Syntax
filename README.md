@@ -29,7 +29,7 @@ Die Vorlage ist ein leeres Projekt in IntelliJ. Erstelle alle nötigen Dateien: 
 Einen Namen, HP (Gesundheitspunkte) und vier Aktionen
 * Beispiele für Aktionen:  \
 Angriffe mit unterschiedlichen Schadenswerten, Heilungsmöglichkeiten, oder Schutzzauber, die einen Helden einmalig vor dem nächsten Angriff schützen.
-* Die Heldengruppe hat einen gemeinsamen Beutel. Dieser kann einmalig pro Runde von einer der Helden genutzt werden. Derjenige Held, der den Beutel nutzt, verzichtet also auf seine Aktion.  \
+* Die Heldengruppe hat einen gemeinsamen Beutel. Dieser kann einmalig pro Runde von einer der Helden genutzt werden. Derjenige Held.Held, der den Beutel nutzt, verzichtet also auf seine Aktion.  \
 In dem Beutel sind Gegenstände, die einen direkten Effekt auswirken, z.B.: 
     * 3x Heiltrank: heilt einen frei wählbaren Helden um die Hälfte seiner Lebenspunkte
     * 1x Vitamine: erhöhen den Schadenswert für einen Helden dauerhaft um 10%.
@@ -54,7 +54,7 @@ Diese Aktion kann jedoch **maximal einmal pro Kampf** ausgeführt werden!
 
 
 * Es ist rundenbasiert. D.h. die einzelnen Mitglieder deines Heldenteams führen nacheinander eine Aktion aus und danach führt der Endgegner eine Aktion aus. Dies läuft so lange, bis die HP <span style="text-decoration:underline;">aller</span> einzelnen Teammitglieder **oder** des Endgegner(-teams) auf 0 sinken.
-* Nachdem sowohl jeder Held als auch jeder Gegner jeweils eine Aktionen durchgeführt hat, endet die Runde und der Kampf geht in die nächste Runde. 
+* Nachdem sowohl jeder Held.Held als auch jeder Gegner jeweils eine Aktionen durchgeführt hat, endet die Runde und der Kampf geht in die nächste Runde. 
 * Die Aktionen des Gegners werden <span style="text-decoration:underline;">völlig zufällig</span> aus seinem Pool an möglichen Aktionen ausgewählt.
 * Die Aktionen der Helden werden mit einer Eingabe auf der Konsole ausgewählt. \
 Das bedeutet, du wirst in der Konsole jede Runde gefragt, welche Aktion du für jeden deiner Helden durchführen möchtest.
