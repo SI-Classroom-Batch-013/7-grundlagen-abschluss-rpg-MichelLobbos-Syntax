@@ -188,6 +188,7 @@ fun runde() {
          """.trimMargin()
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
+            runde()
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt.")
@@ -228,6 +229,7 @@ fun runde() {
          """.trimMargin()
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
+            runde()
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt.")
@@ -267,6 +269,7 @@ fun runde() {
          """.trimMargin()
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
+            runde()
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt.")
