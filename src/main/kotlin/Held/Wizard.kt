@@ -12,11 +12,19 @@ open class Wizard (name: String) : Held(name, 450) {
 
     fun angriffWizard(ziel: Gegner) {
         angriff(ziel, SCHADENSWERT + 30)
+        if (GEGNER.hp > 0) {
+            println("${GEGNER.name} HP : ${GEGNER.hp}")
+        } else {
+            println("${GEGNER.name} wurde besiegt!")
+            GEGNER.hp = 0
+
+        }
 
     }
 
     fun heilungWizard() {
         heilung(HEILUNGSWERT + 10)
+
 
     }
 
@@ -27,6 +35,13 @@ open class Wizard (name: String) : Held(name, 450) {
 
     fun bonusAngriffWizard(ziel: Gegner) {
         bonusAngriff(ziel, BONUSSCHADENSWERT + 100)
+        if (GEGNER.hp > 0) {
+            println("${GEGNER.name} HP : ${GEGNER.hp}")
+        } else {
+            println("${GEGNER.name} wurde besiegt!")
+            GEGNER.hp = 0
+
+        }
 
     }
 

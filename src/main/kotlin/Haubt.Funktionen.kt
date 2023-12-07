@@ -15,7 +15,7 @@ fun hp() {
 }
 
 
-fun sleep(){
+fun sleep() {
     Thread.sleep(2000)
 }
 
@@ -98,54 +98,218 @@ fun sleep(){
 //
 //}
 
-fun tot(){
 
-}
+fun runde() {
 
-fun runde(){
-
-    while ()
     var runde = 1
-
     var nummer = 1
     println("HELDEN : ")
     for (held in HELDENLIST) {
         println("$nummer - ${held.name}")
         nummer++
     }
-    println("""GEGNER :
-        | ${GEGNER.name}""".trimMargin())
-    println("--------RUNDE $runde---------")
-    println("Helden greifen zuerst: ")
+    while (true) {
+        if (GEGNER.hp <= 0) {
+            println("${GEGNER.name} würde besiegt")
+            GEGNER.name = "Bika"
+            GEGNER.hp += 1000
+            BARBARMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+            WIZARDMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+            ARCHERMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
 
-    hp()
+            println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
+        }
+        if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
+            println("${GEGNER.name} würde besiegt.")
+            println(
+                "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
+                        "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
+                        "                ███████╗██║█████╗      ███████║███████║██████╔╝█████╗  ██╔██╗ ██║    ██║  ███╗█████╗  ██║ █╗ ██║██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██╔██╗ ██║\n" +
+                        "                ╚════██║██║██╔══╝      ██╔══██║██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║    ██║   ██║██╔══╝  ██║███╗██║██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║╚██╗██║\n" +
+                        "                ███████║██║███████╗    ██║  ██║██║  ██║██████╔╝███████╗██║ ╚████║    ╚██████╔╝███████╗╚███╔███╔╝╚██████╔╝██║ ╚████║██║ ╚████║███████╗██║ ╚████║\n" +
+                        "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
+                        "                                                                                                                                                               "
+            )
+            break
+        }
+
+
+        println(
+            """GEGNER :
+        | ${GEGNER.name}""".trimMargin()
+        )
+        println("--------RUNDE $runde---------")
+        println("Helden greifen zuerst: ")
+
+        hp()
 
 
 
-    println("------------------------")
+        println("------------------------")
 
 
-    BARBAREN.aktionAussuchenBarbar()
+        BARBAREN.aktionAussuchenBarbar()
+        if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
+            println("${GEGNER.name} würde besiegt")
+            GEGNER.name = "Bika"
+            GEGNER.hp = 1000
+            BARBARMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+            WIZARDMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+            ARCHERMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
 
-    ARCHER.aktionAussuchenArcher()
-    WIZARD.aktionAussuchenWizard()
+            println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
+        }
+        if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
+            println("${GEGNER.name} würde besiegt.")
+            println(
+                "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
+                        "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
+                        "                ███████╗██║█████╗      ███████║███████║██████╔╝█████╗  ██╔██╗ ██║    ██║  ███╗█████╗  ██║ █╗ ██║██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██╔██╗ ██║\n" +
+                        "                ╚════██║██║██╔══╝      ██╔══██║██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║    ██║   ██║██╔══╝  ██║███╗██║██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║╚██╗██║\n" +
+                        "                ███████║██║███████╗    ██║  ██║██║  ██║██████╔╝███████╗██║ ╚████║    ╚██████╔╝███████╗╚███╔███╔╝╚██████╔╝██║ ╚████║██║ ╚████║███████╗██║ ╚████║\n" +
+                        "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
+                        "                                                                                                                                                               "
+            )
+            break
+        }
+
+        ARCHER.aktionAussuchenArcher()
+        if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
+            println("${GEGNER.name} würde besiegt")
+            GEGNER.name = "Bika"
+            GEGNER.hp = 1000
+            BARBARMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+            WIZARDMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+            ARCHERMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+
+            println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
+        }
+        if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
+            println("${GEGNER.name} würde besiegt.")
+            println(
+                "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
+                        "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
+                        "                ███████╗██║█████╗      ███████║███████║██████╔╝█████╗  ██╔██╗ ██║    ██║  ███╗█████╗  ██║ █╗ ██║██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██╔██╗ ██║\n" +
+                        "                ╚════██║██║██╔══╝      ██╔══██║██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║    ██║   ██║██╔══╝  ██║███╗██║██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║╚██╗██║\n" +
+                        "                ███████║██║███████╗    ██║  ██║██║  ██║██████╔╝███████╗██║ ╚████║    ╚██████╔╝███████╗╚███╔███╔╝╚██████╔╝██║ ╚████║██║ ╚████║███████╗██║ ╚████║\n" +
+                        "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
+                        "                                                                                                                                                               "
+            )
+            break
+        }
+        WIZARD.aktionAussuchenWizard()
+        if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
+            println("${GEGNER.name} würde besiegt")
+            GEGNER.name = "Bika"
+            GEGNER.hp = 1000
+            BARBARMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+            WIZARDMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+            ARCHERMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+
+            println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
+        }
+        if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
+            println("${GEGNER.name} würde besiegt.")
+            println(
+                "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
+                        "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
+                        "                ███████╗██║█████╗      ███████║███████║██████╔╝█████╗  ██╔██╗ ██║    ██║  ███╗█████╗  ██║ █╗ ██║██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██╔██╗ ██║\n" +
+                        "                ╚════██║██║██╔══╝      ██╔══██║██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║    ██║   ██║██╔══╝  ██║███╗██║██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║╚██╗██║\n" +
+                        "                ███████║██║███████╗    ██║  ██║██║  ██║██████╔╝███████╗██║ ╚████║    ╚██████╔╝███████╗╚███╔███╔╝╚██████╔╝██║ ╚████║██║ ╚████║███████╗██║ ╚████║\n" +
+                        "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
+                        "                                                                                                                                                               "
+            )
+            break
+        }
 
 
-    if (GEGNER.hp <= 0){
-        GEGNER.name = "Bika"
-        GEGNER.hp = 750
+
+        if(GEGNER.name == "Böser Goblin"){
+            println("Vorsicht Böser Goblin ist dran")
+        }else println("Vorsicht Bika ist dran !!!")
+
+        sleep()
+        GEGNER.randomAngriff()
+
+
+        runde++
+
+
+        if (BARBAREN.hp <= 0 && ARCHER.hp <= 0 && WIZARD.hp <= 0) {
+            println(
+                "                 ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ \n" +
+                        "                ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗\n" +
+                        "                ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝\n" +
+                        "                ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗\n" +
+                        "                ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║\n" +
+                        "                 ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝\n" +
+                        "                                                                                          "
+            )
+            break
+        }
+
+        println("------------------------")
     }
-    println("Vorsicht ${GEGNER.name} ist dran !!!")
-    sleep()
-    GEGNER.randomAngriff()
-
-
-
-
-    runde ++
-    println("------------------------")
-
-
 
 
 }

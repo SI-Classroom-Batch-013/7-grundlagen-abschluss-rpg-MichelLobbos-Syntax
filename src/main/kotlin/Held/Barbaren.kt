@@ -13,12 +13,20 @@ open class Barbaren(name: String) : Held(name, 750) {
 
     fun angriffBarbar(ziel: Gegner) {
         angriff(ziel, SCHADENSWERT + 10)
+        if (GEGNER.hp > 0) {
+            println("${GEGNER.name} HP : ${GEGNER.hp}")
+        } else {
+            println("${GEGNER.name} wurde besiegt!")
+            GEGNER.hp = 0
+
+        }
 
 
     }
 
     fun heilungBarbar() {
         heilung(HEILUNGSWERT + 20)
+
 
     }
 
@@ -29,6 +37,13 @@ open class Barbaren(name: String) : Held(name, 750) {
 
     fun bonusAngriffBarbar(ziel: Gegner) {
         bonusAngriff(ziel, BONUSSCHADENSWERT + 50)
+        if (GEGNER.hp > 0) {
+            println("${GEGNER.name} HP : ${GEGNER.hp}")
+        } else {
+            println("${GEGNER.name} wurde besiegt!")
+            GEGNER.hp = 0
+
+        }
 
     }
 

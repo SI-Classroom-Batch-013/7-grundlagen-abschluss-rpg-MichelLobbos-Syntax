@@ -11,11 +11,20 @@ open class Archer(name: String) : Held(name, 550) {
 
     fun angriffArcher(ziel: Gegner) {
         angriff(ziel, SCHADENSWERT + 20)
+        if (GEGNER.hp > 0) {
+            println("${GEGNER.name} HP : ${GEGNER.hp}")
+        } else {
+            println("${GEGNER.name} wurde besiegt!")
+            GEGNER.hp = 0
+
+        }
 
     }
 
     fun heilungArcher() {
         heilung(HEILUNGSWERT + 15)
+
+
 
     }
 
@@ -26,6 +35,13 @@ open class Archer(name: String) : Held(name, 550) {
 
     fun bonusAngriffArcher(ziel: Gegner) {
         bonusAngriff(ziel, BONUSSCHADENSWERT + 75)
+        if (GEGNER.hp > 0) {
+            println("${GEGNER.name} HP : ${GEGNER.hp}")
+        } else {
+            println("${GEGNER.name} wurde besiegt!")
+            GEGNER.hp = 0
+
+        }
 
     }
 

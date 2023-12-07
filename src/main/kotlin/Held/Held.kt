@@ -10,7 +10,7 @@ open class Held(var name: String, var hp: Int) {
     open fun angriff(ziel: Gegner, schadenswert: Int) {
         ziel.hp -= schadenswert
         println("$name greift ${ziel.name} an und verursacht $schadenswert Schaden!")
-        println("${ziel.name} HP : ${ziel.hp}")
+        //println("${ziel.name} HP : ${ziel.hp}")
     }
 
 

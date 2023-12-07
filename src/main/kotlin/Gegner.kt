@@ -28,13 +28,20 @@ var gegnerTot = false
         //println("${randomHeld.name} HP : ${randomHeld.hp}")
     }
     fun feuer(){
-        println("${GEGNER.name} lasst  Feuer regen, allem wird 200 Schaden zugefügt (ihm selbst auch). ")   //alle
+        println("${GEGNER.name} lasst  Feuer regen, allem wird 200 Schaden zugefügt (er trift selbst auch!). ")   //alle
         hp -= 200
         for (held in HELDENLIST) {
             held.hp -= 200
             println("${held.name} HP: ${held.hp} ")
         }
-        println("$name HP : $hp")
+        if (GEGNER.hp > 0) {
+            println("${GEGNER.name} HP : ${GEGNER.hp}")
+
+        } else {
+            println("${GEGNER.name} wurde besiegt!")
+            GEGNER.hp = 0
+        }
+
 
     }
 
