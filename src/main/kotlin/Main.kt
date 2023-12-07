@@ -6,7 +6,8 @@ import Held.Wizard
 var SCHADENSWERT = 200
 var HEILUNGSWERT = 50
 var BONUSSCHADENSWERT = 300
-val GEGNER = Gegner("Böser Goblin")
+var GEGNER = Gegner("Böser Goblin",750)
+
 var BARBAREN= Barbaren("Barbar")
 var ARCHER= Archer("Archer")
 var WIZARD: Wizard = Wizard("Wizard")
@@ -45,6 +46,24 @@ var HELDENMENÜ = """
              |3 - VerteidigungSchild
              |4 - Bonusangriff
          """.trimMargin()
+var BARBARMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+var WIZARDMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
+var ARCHERMENÜ = """
+             |1 - Angriff
+             |2 - Heilung
+             |3 - VerteidigungSchild
+             |4 - Bonusangriff
+         """.trimMargin()
 fun main() {
 
     println("\u001B[32m"+"                                                         ██████╗ ██╗██████╗     ██╗██╗  ██╗███╗   ███╗\n" +
@@ -57,6 +76,6 @@ fun main() {
 
 
 
-println(HELDENLIST)
+//println(HELDENLIST)
 
 }

@@ -1,12 +1,23 @@
-import Held.Held
-
 fun hp() {
-    for (held in HELDENLIST)
-        println("${held.name} HP : ${held.hp}")
+    for (held in HELDENLIST) {
+        if (held.hp > 0) {
+            println("${held.name} HP       : ${held.hp}")
+        } else {
+            println("${held.name} wurde besiegt!")
+        }
+    }
 
+    if (GEGNER.hp > 0) {
+        println("${GEGNER.name} HP : ${GEGNER.hp}")
+    } else {
+        println("${GEGNER.name} wurde besiegt!")
+    }
 }
 
 
+fun sleep(){
+    Thread.sleep(2000)
+}
 
 
 //fun heldAussuchen(){
@@ -87,21 +98,52 @@ fun hp() {
 //
 //}
 
+fun tot(){
+
+}
 
 fun runde(){
 
-    println("Helden greifen zuerst: ")
-    var nummer = 1
-        for (held in HELDENLIST) {
-            println("$nummer - ${held.name}")
-            nummer++
-        }
-    println("${GEGNER.name} HP : ${GEGNER.hp}")
+    while ()
     var runde = 1
 
+    var nummer = 1
+    println("HELDEN : ")
+    for (held in HELDENLIST) {
+        println("$nummer - ${held.name}")
+        nummer++
+    }
+    println("""GEGNER :
+        | ${GEGNER.name}""".trimMargin())
+    println("--------RUNDE $runde---------")
+    println("Helden greifen zuerst: ")
+
+    hp()
+
+
+
+    println("------------------------")
+
+
     BARBAREN.aktionAussuchenBarbar()
+
     ARCHER.aktionAussuchenArcher()
     WIZARD.aktionAussuchenWizard()
+
+
+    if (GEGNER.hp <= 0){
+        GEGNER.name = "Bika"
+        GEGNER.hp = 750
+    }
+    println("Vorsicht ${GEGNER.name} ist dran !!!")
+    sleep()
+    GEGNER.randomAngriff()
+
+
+
+
+    runde ++
+    println("------------------------")
 
 
 

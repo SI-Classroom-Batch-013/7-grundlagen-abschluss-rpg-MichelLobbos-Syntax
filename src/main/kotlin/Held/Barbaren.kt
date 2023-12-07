@@ -1,10 +1,12 @@
 package Held
 
+import BARBARMENÜ
 import BONUSSCHADENSWERT
 import GEGNER
 import Gegner
 import HEILUNGSWERT
 import SCHADENSWERT
+import sleep
 
 open class Barbaren(name: String) : Held(name, 750) {
 
@@ -30,17 +32,11 @@ open class Barbaren(name: String) : Held(name, 750) {
 
     }
 
-    var gewaltBeiBarbar: MutableList<String> = mutableListOf()
     fun aktionAussuchenBarbar() {
-        println("Barbar soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
-        var menü = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
 
-        println(menü)
+        println("Barbar soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
+
+        println(BARBARMENÜ)
 
 
         var auswahl: String
@@ -53,38 +49,34 @@ open class Barbaren(name: String) : Held(name, 750) {
                 }
             }
         }
-
         when (auswahl) {
             "1" -> {
                 angriffBarbar(GEGNER)
-                gewaltBeiBarbar.add("1")
-
+                BARBARMENÜ = BARBARMENÜ.replace("1 - Angriff", "X - Angriff")
+                //println(BARBARMENÜ)
             }
 
             "2" -> {
                 heilungBarbar()
-                gewaltBeiBarbar.add("2")
-
+                BARBARMENÜ = BARBARMENÜ.replace("2 - Heilung", "X - Heilung")
+                //println(BARBARMENÜ)
             }
 
             "3" -> {
                 verteidigungsSchild()
-                gewaltBeiBarbar.add("3")
-
+                BARBARMENÜ = BARBARMENÜ.replace("3 - VerteidigungSchild", "X - VerteidigungSchild")
+                //println(BARBARMENÜ)
             }
 
             "4" -> {
                 bonusAngriffBarbar(GEGNER)
-                gewaltBeiBarbar.add("4")
+                BARBARMENÜ = BARBARMENÜ.replace("4 - Bonusangriff", "X - Bonusangriff")
+                //println(BARBARMENÜ)
 
 
             }
         }
-    if (gewaltBeiBarbar.size == 4 ) {
-        println("Barbar hat seine vier Aktionen benutzt")
-        println("Suchen Sie andere Held aus!")
 
-    }
     }
 
 

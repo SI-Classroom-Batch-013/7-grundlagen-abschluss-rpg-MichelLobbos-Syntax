@@ -1,5 +1,6 @@
 package Held
 
+import ARCHERMENÜ
 import BONUSSCHADENSWERT
 import GEGNER
 import Gegner
@@ -30,18 +31,13 @@ open class Archer(name: String) : Held(name, 550) {
 
 
     fun aktionAussuchenArcher() {
-        println("Held.Held.Archer soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
+        println("Archer soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
 
-        var menü = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
 
-        println(menü)
 
-        repeat(4) {
+        println(ARCHERMENÜ)
+
+
             var auswahl: String
             while (true) {
                 auswahl = readln()
@@ -52,39 +48,38 @@ open class Archer(name: String) : Held(name, 550) {
                     }
                 }
             }
-
             when (auswahl) {
                 "1" -> {
                     angriffArcher(GEGNER)
-                    menü = menü.replace("1 - Angriff", "X - Angriff")
-                    println(menü)
+                    ARCHERMENÜ = ARCHERMENÜ.replace("1 - Angriff", "X - Angriff")
+                    //println(ArcherMenü)
 
                 }
 
                 "2" -> {
                     heilungArcher()
-                    menü = menü.replace("2 - Heilung", "X - Heilung")
-                    println(menü)
+                    ARCHERMENÜ = ARCHERMENÜ.replace("2 - Heilung", "X - Heilung")
+                    //println(ArcherMenü)
 
                 }
 
                 "3" -> {
                     verteidigungsSchild()
-                    menü = menü.replace("3 - VerteidigungSchild", "X - VerteidigungSchild")
-                    println(menü)
+                    ARCHERMENÜ = ARCHERMENÜ.replace("3 - VerteidigungSchild", "X - VerteidigungSchild")
+                    //println(ArcherMenü)
 
                 }
 
                 "4" -> {
                     bonusAngriffArcher(GEGNER)
-                    menü = menü.replace("4 - Bonusangriff", "X - Bonusangriff")
-                    println(menü)
+                    ARCHERMENÜ = ARCHERMENÜ.replace("4 - Bonusangriff", "X - Bonusangriff")
+                    //println(ArcherMenü)
 
 
                 }
             }
-        }
-        println("Archer hat ihre vier Aktionen benutzt")
+
+        //println("Archer hat ihre vier Aktionen benutzt")
 
 
     }

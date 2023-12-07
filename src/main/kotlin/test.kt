@@ -2,12 +2,11 @@ fun main() {
 
 
     //heldAuswählen()
-    GEGNER.angriff()
-    GEGNER.bandage()
-    GEGNER.feuer()
-    GEGNER.sniper()
+//    GEGNER.angriff()
+//    GEGNER.bandage()
+//    GEGNER.feuer()
+//    GEGNER.sniper()
+runde()
 
-
-GEGNER.random()
 
 }

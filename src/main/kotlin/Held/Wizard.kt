@@ -5,6 +5,8 @@ import GEGNER
 import Gegner
 import HEILUNGSWERT
 import SCHADENSWERT
+import WIZARDMENÜ
+import sleep
 
 open class Wizard (name: String) : Held(name, 450) {
 
@@ -29,18 +31,13 @@ open class Wizard (name: String) : Held(name, 450) {
     }
 
     fun aktionAussuchenWizard() {
-        println("Held.Held.Wizard soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
+        println("Wizard soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
 
-        var menü = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
 
-        println(menü)
 
-        repeat(4) {
+        println(WIZARDMENÜ)
+
+
             var auswahl: String
             while (true) {
                 auswahl = readln()
@@ -51,39 +48,38 @@ open class Wizard (name: String) : Held(name, 450) {
                     }
                 }
             }
-
             when (auswahl) {
                 "1" -> {
                     angriffWizard(GEGNER)
-                    menü = menü.replace("1 - Angriff", "X - Angriff")
-                    println(menü)
+                    WIZARDMENÜ = WIZARDMENÜ.replace("1 - Angriff", "X - Angriff")
+                    //println(WIZARDMENÜ)
 
                 }
 
                 "2" -> {
                     heilungWizard()
-                    menü = menü.replace("2 - Heilung", "X - Heilung")
-                    println(menü)
+                    WIZARDMENÜ = WIZARDMENÜ.replace("2 - Heilung", "X - Heilung")
+                    //println(WIZARDMENÜ)
 
                 }
 
                 "3" -> {
                     verteidigungsSchild()
-                    menü = menü.replace("3 - VerteidigungSchild", "X - VerteidigungSchild")
-                    println(menü)
+                    WIZARDMENÜ = WIZARDMENÜ.replace("3 - VerteidigungSchild", "X - VerteidigungSchild")
+                    //println(WIZARDMENÜ)
 
                 }
 
                 "4" -> {
                     bonusAngriffWizard(GEGNER)
-                    menü = menü.replace("4 - Bonusangriff", "X - Bonusangriff")
-                    println(menü)
+                    WIZARDMENÜ = WIZARDMENÜ.replace("4 - Bonusangriff", "X - Bonusangriff")
+                    //println(WIZARDMENÜ)
 
 
                 }
             }
-        }
-        println("Wizard hat seine vier Aktionen benutzt")
+
+        //println("Wizard hat seine vier Aktionen benutzt")
 
 
     }
