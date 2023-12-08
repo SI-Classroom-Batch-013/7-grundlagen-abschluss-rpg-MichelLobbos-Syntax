@@ -109,10 +109,11 @@ fun runde() {
         nummer++
     }
     while (true) {
-        if (GEGNER.hp <= 0) {
+        SNIPERSCHUß = 700
+        if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
-            GEGNER.hp += 1000
+            GEGNER.hp = 1000
             BARBARMENÜ = """
              |1 - Angriff
              |2 - Heilung
@@ -133,9 +134,10 @@ fun runde() {
          """.trimMargin()
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
+            //runde()
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
-            println("${GEGNER.name} würde besiegt.")
+
             println(
                 "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
                         "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
@@ -162,8 +164,9 @@ fun runde() {
 
         println("------------------------")
 
-
-        BARBAREN.aktionAussuchenBarbar()
+        if (BARBAREN.hp > 0) {
+            BARBAREN.aktionAussuchenBarbar()
+        }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
@@ -188,10 +191,10 @@ fun runde() {
          """.trimMargin()
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
-            runde()
+
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
-            println("${GEGNER.name} würde besiegt.")
+
             println(
                 "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
                         "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
@@ -204,7 +207,9 @@ fun runde() {
             break
         }
 
-        ARCHER.aktionAussuchenArcher()
+        if (ARCHER.hp > 0) {
+            ARCHER.aktionAussuchenArcher()
+        }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
@@ -229,10 +234,10 @@ fun runde() {
          """.trimMargin()
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
-            runde()
+
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
-            println("${GEGNER.name} würde besiegt.")
+
             println(
                 "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
                         "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
@@ -242,9 +247,13 @@ fun runde() {
                         "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
                         "                                                                                                                                                               "
             )
+
             break
         }
-        WIZARD.aktionAussuchenWizard()
+
+        if (WIZARD.hp > 0) {
+            WIZARD.aktionAussuchenWizard()
+        }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
@@ -269,10 +278,10 @@ fun runde() {
          """.trimMargin()
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
-            runde()
+
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
-            println("${GEGNER.name} würde besiegt.")
+
             println(
                 "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
                         "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
@@ -282,14 +291,15 @@ fun runde() {
                         "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
                         "                                                                                                                                                               "
             )
+
             break
+
+
         }
 
-
-
-        if(GEGNER.name == "Böser Goblin"){
+        if (GEGNER.name == "Böser Goblin" && GEGNER.hp > 0) {
             println("Vorsicht Böser Goblin ist dran")
-        }else println("Vorsicht Bika ist dran !!!")
+        } else println("Vorsicht Bika ist dran !!!")
 
         sleep()
         GEGNER.randomAngriff()
@@ -316,7 +326,6 @@ fun runde() {
 
 
 }
-
 
 
 

@@ -16,15 +16,15 @@ var gegnerTot = false
     }
 
     fun bandage (){
-        println("${GEGNER.name} hat bandage genutzt, fühlt HP wieder auf.")
-        GEGNER.hp = 1300
+        println("${GEGNER.name} hat bandage genutzt, erhöht sein HP mit 100 HP Punkten.")
+        GEGNER.hp += 100
         println("${GEGNER.name} HP : $hp")
     }
 
     fun sniper(){
         var randomHeld = HELDENLIST.random()
         println("${GEGNER.name} greift ${randomHeld.name} mit einem Sniper-Schuß an, verursacht 600 Schaden. ")
-        randomHeld.hp -= 600
+        randomHeld.hp -= SNIPERSCHUß
         //println("${randomHeld.name} HP : ${randomHeld.hp}")
     }
     fun feuer(){

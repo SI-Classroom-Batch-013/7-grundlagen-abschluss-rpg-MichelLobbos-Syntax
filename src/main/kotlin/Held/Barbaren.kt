@@ -16,7 +16,7 @@ open class Barbaren(name: String) : Held(name, 750) {
         if (GEGNER.hp > 0) {
             println("${GEGNER.name} HP : ${GEGNER.hp}")
         } else {
-            println("${GEGNER.name} wurde besiegt!")
+            //println("${GEGNER.name} wurde besiegt!")
             GEGNER.hp = 0
 
         }
@@ -40,7 +40,7 @@ open class Barbaren(name: String) : Held(name, 750) {
         if (GEGNER.hp > 0) {
             println("${GEGNER.name} HP : ${GEGNER.hp}")
         } else {
-            println("${GEGNER.name} wurde besiegt!")
+            //println("${GEGNER.name} wurde besiegt!")
             GEGNER.hp = 0
 
         }
@@ -64,6 +64,18 @@ open class Barbaren(name: String) : Held(name, 750) {
                 }
             }
         }
+//        if (BARBARMENÜ.count { it == 'X' } == 4) {
+//            println("""Barbar hat keine übrige Effect.
+//                | um die Effecte wiederherzustellen Soll der Barbar Effect-Tablette nehmen!
+//                | soll er nehmen?? Y/N """.trimMargin())
+//            var nehmmen= readln()
+//            if (nehmmen == "y"){
+//
+//
+//            }
+//
+//        }
+
         when (auswahl) {
             "1" -> {
                 angriffBarbar(GEGNER)
@@ -87,12 +99,12 @@ open class Barbaren(name: String) : Held(name, 750) {
                 bonusAngriffBarbar(GEGNER)
                 BARBARMENÜ = BARBARMENÜ.replace("4 - Bonusangriff", "X - Bonusangriff")
                 //println(BARBARMENÜ)
-
-
             }
-        }
 
+        }
     }
 
-
 }
+
+
+

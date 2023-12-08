@@ -14,7 +14,7 @@ open class Archer(name: String) : Held(name, 550) {
         if (GEGNER.hp > 0) {
             println("${GEGNER.name} HP : ${GEGNER.hp}")
         } else {
-            println("${GEGNER.name} wurde besiegt!")
+            //println("${GEGNER.name} wurde besiegt!")
             GEGNER.hp = 0
 
         }
@@ -38,7 +38,7 @@ open class Archer(name: String) : Held(name, 550) {
         if (GEGNER.hp > 0) {
             println("${GEGNER.name} HP : ${GEGNER.hp}")
         } else {
-            println("${GEGNER.name} wurde besiegt!")
+            //println("${GEGNER.name} wurde besiegt!")
             GEGNER.hp = 0
 
         }
