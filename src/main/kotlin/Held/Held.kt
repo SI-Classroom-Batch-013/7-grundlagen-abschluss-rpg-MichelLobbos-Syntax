@@ -77,7 +77,9 @@ open class Held(var name: String, var hp: Int) {
                     BEUTEL = BEUTEL.replace("2 -  Heiltrank  * 1", "X -  Heiltrank  Fertig")
                     break
                 }
+
             }
+
         }
 
     }

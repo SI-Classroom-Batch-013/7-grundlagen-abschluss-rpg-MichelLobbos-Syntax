@@ -165,6 +165,15 @@ fun runde() {
         println("------------------------")
 
         if (BARBAREN.hp > 0) {
+            println("${BARBAREN.name} ist dran")
+            println("""Beutel öffnen? (Y/N)
+                |Vorsicht wenn Barbar der Beutel öffnet, kann er seine Aktionen erst in der nächste Runde nutzen!!
+            """.trimMargin())
+            var öffnen = readln()
+
+            if (öffnen == "Y" || öffnen == "y"){
+                BARBAREN.beutelNutzen()
+            }else
             BARBAREN.aktionAussuchenBarbar()
         }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
@@ -193,6 +202,14 @@ fun runde() {
         }
 
         if (ARCHER.hp > 0) {
+            println("${ARCHER.name} ist dran")
+
+            println("Beutel öffnen (Y/N)")
+            var öffnen = readln()
+
+            if (öffnen == "Y" || öffnen == "y"){
+                ARCHER.beutelNutzen()
+            }else
             ARCHER.aktionAussuchenArcher()
         }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
@@ -222,6 +239,14 @@ fun runde() {
         }
 
         if (WIZARD.hp > 0) {
+            println("${WIZARD.name} ist dran")
+
+            println("Beutel öffnen (Y/N)")
+            var öffnen = readln()
+
+            if (öffnen == "Y" || öffnen == "y"){
+                WIZARD.beutelNutzen()
+            }else
             WIZARD.aktionAussuchenWizard()
         }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
