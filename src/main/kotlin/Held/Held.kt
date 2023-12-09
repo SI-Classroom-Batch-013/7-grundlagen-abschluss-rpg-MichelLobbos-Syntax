@@ -2,6 +2,7 @@ package Held
 
 import ARCHERMENÜ
 import BARBARMENÜ
+import BEUTEL
 import Gegner
 import HELDENMENÜ
 import SNIPERSCHUß
@@ -38,9 +39,7 @@ open class Held(var name: String, var hp: Int) {
     }
 
 
-    var BEUTEL= """1 -  VITAMINE * 1
-    |2 -  Heiltrank  * 2
-""".trimMargin()
+
 
 
     fun beutelNutzen() {
@@ -48,7 +47,7 @@ open class Held(var name: String, var hp: Int) {
         println(BEUTEL)
         while (true) {
             if (BEUTEL.count { it == 'X' } == 2) {
-                println("Beutel Leer !!!")
+                println("Beutel Leer !!! ")
                 break
             }
 

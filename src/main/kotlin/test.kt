@@ -3,9 +3,10 @@ fun main() {
 
 //runde()
     BARBAREN.beutelNutzen()
+    ARCHER.beutelNutzen()
 
-    BARBAREN.beutelNutzen()
-    BARBAREN.beutelNutzen()
+    WIZARD.beutelNutzen()
+
     BARBAREN.beutelNutzen()
 
 
