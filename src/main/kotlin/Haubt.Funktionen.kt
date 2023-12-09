@@ -114,39 +114,16 @@ fun runde() {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
             GEGNER.hp = 1000
-            BARBARMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
-            WIZARDMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
-            ARCHERMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
+            BARBARMENÜ = HELDENMENÜ
+            WIZARDMENÜ = HELDENMENÜ
+            ARCHERMENÜ = HELDENMENÜ
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
             //runde()
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
 
-            println(
-                "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
-                        "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
-                        "                ███████╗██║█████╗      ███████║███████║██████╔╝█████╗  ██╔██╗ ██║    ██║  ███╗█████╗  ██║ █╗ ██║██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██╔██╗ ██║\n" +
-                        "                ╚════██║██║██╔══╝      ██╔══██║██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║    ██║   ██║██╔══╝  ██║███╗██║██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║╚██╗██║\n" +
-                        "                ███████║██║███████╗    ██║  ██║██║  ██║██████╔╝███████╗██║ ╚████║    ╚██████╔╝███████╗╚███╔███╔╝╚██████╔╝██║ ╚████║██║ ╚████║███████╗██║ ╚████║\n" +
-                        "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
-                        "                                                                                                                                                               "
-            )
+            println(GEWONNEN)
             break
         }
 
@@ -166,26 +143,35 @@ fun runde() {
 
         if (BARBAREN.hp > 0) {
             println("${BARBAREN.name} ist dran")
-            println("""Beutel öffnen? (Y/N)
-                |Vorsicht wenn Barbar der Beutel öffnet, kann er seine Aktionen erst in der nächste Runde nutzen!!
-            """.trimMargin())
-            var öffnen = readln()
 
-            when (öffnen.toLowerCase()) {
-                "y" -> {
-                    BARBAREN.beutelNutzen()
-                    break
-                }
+            while (true) {
+                println(
+                    """Beutel öffnen? (Y/N)
+            |Vorsicht wenn Barbar der Beutel öffnet, kann er seine Aktionen erst in der nächsten Runde nutzen!!
+        """.trimMargin()
+                )
 
-                "n" -> {
-                    BARBAREN.aktionAussuchenBarbar()
-                    break
-                }
+                var öffnen = readln()
 
-                else -> {
-                    println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                when (öffnen.toLowerCase()) {
+                    "y" -> {
+                        BARBAREN.beutelNutzen()
+                        break  // Verlassen der Schleife nach erfolgreicher Eingabe
+                    }
+
+                    "n" -> {
+                        BARBAREN.aktionAussuchenBarbar()
+                        break  // Verlassen der Schleife nach erfolgreicher Eingabe
+                    }
+
+                    else -> {
+                        println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                        // Die Schleife wird fortgesetzt, sodass der Nutzer es erneut versuchen kann.
+                    }
                 }
             }
+        }
+
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
@@ -199,39 +185,35 @@ fun runde() {
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
 
-            println(
-                "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
-                        "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
-                        "                ███████╗██║█████╗      ███████║███████║██████╔╝█████╗  ██╔██╗ ██║    ██║  ███╗█████╗  ██║ █╗ ██║██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██╔██╗ ██║\n" +
-                        "                ╚════██║██║██╔══╝      ██╔══██║██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║    ██║   ██║██╔══╝  ██║███╗██║██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║╚██╗██║\n" +
-                        "                ███████║██║███████╗    ██║  ██║██║  ██║██████╔╝███████╗██║ ╚████║    ╚██████╔╝███████╗╚███╔███╔╝╚██████╔╝██║ ╚████║██║ ╚████║███████╗██║ ╚████║\n" +
-                        "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
-                        "                                                                                                                                                               "
-            )
+            println(GEWONNEN)
             break
         }
 
         if (ARCHER.hp > 0) {
             println("${ARCHER.name} ist dran")
 
-            println("Beutel öffnen (Y/N)")
-            var öffnen = readln()
+            while (true) {
+                println("Beutel öffnen? (Y/N)")
+                var öffnen = readln()
 
-            when (öffnen.toLowerCase()) {
-                "y" -> {
-                    ARCHER.beutelNutzen()
-                    break
-                }
+                when (öffnen.toLowerCase()) {
+                    "y" -> {
+                        ARCHER.beutelNutzen()
+                        break  // Verlassen der Schleife nach erfolgreicher Eingabe
+                    }
 
-                "n" -> {
-                    ARCHER.aktionAussuchenArcher()
-                    break
-                }
+                    "n" -> {
+                        ARCHER.aktionAussuchenArcher()
+                        break  // Verlassen der Schleife nach erfolgreicher Eingabe
+                    }
 
-                else -> {
-                    println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                    else -> {
+                        println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                        // Die Schleife wird fortgesetzt, sodass der Nutzer es erneut versuchen kann.
+                    }
                 }
             }
+        }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
@@ -245,15 +227,7 @@ fun runde() {
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
 
-            println(
-                "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
-                        "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
-                        "                ███████╗██║█████╗      ███████║███████║██████╔╝█████╗  ██╔██╗ ██║    ██║  ███╗█████╗  ██║ █╗ ██║██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██╔██╗ ██║\n" +
-                        "                ╚════██║██║██╔══╝      ██╔══██║██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║    ██║   ██║██╔══╝  ██║███╗██║██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║╚██╗██║\n" +
-                        "                ███████║██║███████╗    ██║  ██║██║  ██║██████╔╝███████╗██║ ╚████║    ╚██████╔╝███████╗╚███╔███╔╝╚██████╔╝██║ ╚████║██║ ╚████║███████╗██║ ╚████║\n" +
-                        "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
-                        "                                                                                                                                                               "
-            )
+            println(GEWONNEN)
 
             break
         }
@@ -261,24 +235,29 @@ fun runde() {
         if (WIZARD.hp > 0) {
             println("${WIZARD.name} ist dran")
 
-            println("Beutel öffnen (Y/N)")
-            var öffnen = readln()
+            while (true) {
+                println("Beutel öffnen? (Y/N)")
+                var öffnen = readln()
 
-            when (öffnen.toLowerCase()) {
-                "y" -> {
-                    WIZARD.beutelNutzen()
-                    break
-                }
+                when (öffnen.toLowerCase()) {
+                    "y" -> {
+                        WIZARD.beutelNutzen()
+                        break  // Verlassen der Schleife nach erfolgreicher Eingabe
+                    }
 
-                "n" -> {
-                    WIZARD.aktionAussuchenWizard()
-                    break
-                }
+                    "n" -> {
+                        WIZARD.aktionAussuchenWizard()
+                        break  // Verlassen der Schleife nach erfolgreicher Eingabe
+                    }
 
-                else -> {
-                    println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                    else -> {
+                        println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                        // Die Schleife wird fortgesetzt, sodass der Nutzer es erneut versuchen kann.
+                    }
                 }
             }
+        }
+
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
@@ -292,15 +271,7 @@ fun runde() {
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
 
-            println(
-                "                ███████╗██╗███████╗    ██╗  ██╗ █████╗ ██████╗ ███████╗███╗   ██╗     ██████╗ ███████╗██╗    ██╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗███╗   ██╗\n" +
-                        "                ██╔════╝██║██╔════╝    ██║  ██║██╔══██╗██╔══██╗██╔════╝████╗  ██║    ██╔════╝ ██╔════╝██║    ██║██╔═══██╗████╗  ██║████╗  ██║██╔════╝████╗  ██║\n" +
-                        "                ███████╗██║█████╗      ███████║███████║██████╔╝█████╗  ██╔██╗ ██║    ██║  ███╗█████╗  ██║ █╗ ██║██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██╔██╗ ██║\n" +
-                        "                ╚════██║██║██╔══╝      ██╔══██║██╔══██║██╔══██╗██╔══╝  ██║╚██╗██║    ██║   ██║██╔══╝  ██║███╗██║██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║╚██╗██║\n" +
-                        "                ███████║██║███████╗    ██║  ██║██║  ██║██████╔╝███████╗██║ ╚████║    ╚██████╔╝███████╗╚███╔███╔╝╚██████╔╝██║ ╚████║██║ ╚████║███████╗██║ ╚████║\n" +
-                        "                ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝\n" +
-                        "                                                                                                                                                               "
-            )
+            println(GEWONNEN)
 
             break
 
