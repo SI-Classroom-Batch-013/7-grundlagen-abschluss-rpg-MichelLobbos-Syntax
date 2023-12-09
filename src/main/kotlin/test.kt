@@ -1,7 +1,7 @@
 fun main() {
 
+println(FEUER)
 
-runde()
-
+println(GEWONNEN)
 
 }

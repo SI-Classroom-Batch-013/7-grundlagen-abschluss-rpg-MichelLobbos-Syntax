@@ -122,7 +122,7 @@ fun runde() {
             //runde()
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
-
+            println(FEUER)
             println(GEWONNEN)
             break
         }
@@ -184,7 +184,7 @@ fun runde() {
 
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
-
+            println(FEUER)
             println(GEWONNEN)
             break
         }
@@ -226,7 +226,7 @@ fun runde() {
 
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
-
+            println(FEUER)
             println(GEWONNEN)
 
             break
@@ -270,7 +270,7 @@ fun runde() {
 
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
-
+            println(FEUER)
             println(GEWONNEN)
 
             break
