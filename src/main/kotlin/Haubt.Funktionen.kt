@@ -171,24 +171,9 @@ fun runde() {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
             GEGNER.hp = 1000
-            BARBARMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
-            WIZARDMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
-            ARCHERMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
+            BARBARMENÜ = HELDENMENÜ
+            WIZARDMENÜ = HELDENMENÜ
+            ARCHERMENÜ = HELDENMENÜ
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
 
@@ -214,24 +199,9 @@ fun runde() {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
             GEGNER.hp = 1000
-            BARBARMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
-            WIZARDMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
-            ARCHERMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
+            BARBARMENÜ = HELDENMENÜ
+            WIZARDMENÜ = HELDENMENÜ
+            ARCHERMENÜ = HELDENMENÜ
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
 
@@ -258,24 +228,9 @@ fun runde() {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
             GEGNER.hp = 1000
-            BARBARMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
-            WIZARDMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
-            ARCHERMENÜ = """
-             |1 - Angriff
-             |2 - Heilung
-             |3 - VerteidigungSchild
-             |4 - Bonusangriff
-         """.trimMargin()
+            BARBARMENÜ = HELDENMENÜ
+            WIZARDMENÜ = HELDENMENÜ
+            ARCHERMENÜ = HELDENMENÜ
 
             println("WARNUNG !!!! ${GEGNER.name} kommt !!!! ")
 

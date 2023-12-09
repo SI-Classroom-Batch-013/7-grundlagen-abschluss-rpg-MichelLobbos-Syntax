@@ -1,7 +1,13 @@
 fun main() {
 
 
-runde()
+//runde()
+    BARBAREN.beutelNutzen()
+
+    BARBAREN.beutelNutzen()
+    BARBAREN.beutelNutzen()
+    BARBAREN.beutelNutzen()
+
 
 
 }
