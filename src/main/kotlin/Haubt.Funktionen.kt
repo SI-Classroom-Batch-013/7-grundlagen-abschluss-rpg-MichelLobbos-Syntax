@@ -171,11 +171,21 @@ fun runde() {
             """.trimMargin())
             var öffnen = readln()
 
-            if (öffnen == "Y" || öffnen == "y"){
-                BARBAREN.beutelNutzen()
-            }else
-            BARBAREN.aktionAussuchenBarbar()
-        }
+            when (öffnen.toLowerCase()) {
+                "y" -> {
+                    BARBAREN.beutelNutzen()
+                    break
+                }
+
+                "n" -> {
+                    BARBAREN.aktionAussuchenBarbar()
+                    break
+                }
+
+                else -> {
+                    println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                }
+            }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
@@ -207,11 +217,21 @@ fun runde() {
             println("Beutel öffnen (Y/N)")
             var öffnen = readln()
 
-            if (öffnen == "Y" || öffnen == "y"){
-                ARCHER.beutelNutzen()
-            }else
-            ARCHER.aktionAussuchenArcher()
-        }
+            when (öffnen.toLowerCase()) {
+                "y" -> {
+                    ARCHER.beutelNutzen()
+                    break
+                }
+
+                "n" -> {
+                    ARCHER.aktionAussuchenArcher()
+                    break
+                }
+
+                else -> {
+                    println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                }
+            }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
@@ -244,11 +264,21 @@ fun runde() {
             println("Beutel öffnen (Y/N)")
             var öffnen = readln()
 
-            if (öffnen == "Y" || öffnen == "y"){
-                WIZARD.beutelNutzen()
-            }else
-            WIZARD.aktionAussuchenWizard()
-        }
+            when (öffnen.toLowerCase()) {
+                "y" -> {
+                    WIZARD.beutelNutzen()
+                    break
+                }
+
+                "n" -> {
+                    WIZARD.aktionAussuchenWizard()
+                    break
+                }
+
+                else -> {
+                    println("Ungültige Eingabe. Bitte wählen Sie Y oder N.")
+                }
+            }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
             GEGNER.name = "Bika"
