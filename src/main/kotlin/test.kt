@@ -1,6 +1,8 @@
 fun main() {
+//
+//println(FEUER)
 
-println(FEUER)
+    println(SPIELNAME)
 
 println(GEWONNEN)
 
