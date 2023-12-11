@@ -34,11 +34,15 @@ var gegnerTot = false
         //println("${randomHeld.name} HP : ${randomHeld.hp}")
     }
     fun feuer(){
-        println("${GEGNER.name} lasst  Feuer regen, allem wird 200 Schaden zugefügt (er trift selbst auch!). ")   //alle
+        println("${GEGNER.name} lasst  Feuer regen, allem wird 200 Schaden zugefügt (er trift selbst auch!). ")
         hp -= 200
         for (held in HELDENLIST) {
             held.hp -= 200
-            println("${held.name} HP: ${held.hp} ")
+            if (held.hp > 0) {
+                println("${held.name} HP       : ${held.hp}")
+            } else {
+                println("${held.name} wurde besiegt!")
+            }
         }
         if (GEGNER.hp > 0) {
             println("${GEGNER.name} HP : ${GEGNER.hp}")
@@ -64,7 +68,7 @@ var gegnerTot = false
 
     fun randomAngriff() {
         val verfuegbareAngriffe = mutableListOf(0, 1, 2, 3, 4, 5)
-        //val randomAngriffIndex = (0..5).random()
+
         val randomIndex = verfuegbareAngriffe.random()
         verfuegbareAngriffe.remove(randomIndex)
 

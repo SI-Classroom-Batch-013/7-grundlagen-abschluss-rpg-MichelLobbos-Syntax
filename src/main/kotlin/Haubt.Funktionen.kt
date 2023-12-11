@@ -24,7 +24,7 @@ fun runde() {
 
     var runde = 1
     var nummer = 1
-    println("HELDEN : ")
+    println("\u001B[40m"+"HELDEN : ")
     for (held in HELDENLIST) {
         println("$nummer - ${held.name}")
         nummer++
@@ -53,8 +53,10 @@ fun runde() {
             """GEGNER :
         | ${GEGNER.name}""".trimMargin()
         )
-        println("--------RUNDE $runde---------")
-        println("Helden greifen zuerst: ")
+        println("\u001B[32m"+"╔══════════════════════╗")
+        println("╠--------RUNDE $runde-------╣")
+        println("╚══════════════════════╝")
+        println("\u001B[34m"+"Helden greifen zuerst: ")
 
         hp()
 
@@ -63,7 +65,7 @@ fun runde() {
         println("------------------------")
 
         if (BARBAREN.hp > 0) {
-            println("${BARBAREN.name} ist dran")
+            println("${BARBAREN.name}"+" ist dran")
 
             while (true) {
                 println(
@@ -211,7 +213,7 @@ fun runde() {
 
 
         if (BARBAREN.hp <= 0 && ARCHER.hp <= 0 && WIZARD.hp <= 0) {
-            println(
+            println("\u001B[31m"+
                 "                 ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ \n" +
                         "                ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗\n" +
                         "                ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝\n" +
