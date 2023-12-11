@@ -22,9 +22,15 @@ var gegnerTot = false
     }
 
     fun sniper(){
-        var randomHeld = HELDENLIST.random()
-        println("${GEGNER.name} greift ${randomHeld.name} mit einem Sniper-Schuß an, verursacht 600 Schaden. ")
-        randomHeld.hp -= SNIPERSCHUß
+        while (true) {
+
+            var randomHeld = HELDENLIST.random()
+            if (randomHeld.hp >= 0 ) {
+                println("${GEGNER.name} greift ${randomHeld.name} mit einem Sniper-Schuß an, verursacht 600 Schaden. ")
+                randomHeld.hp -= SNIPERSCHUß
+                break
+            }
+        }
         //println("${randomHeld.name} HP : ${randomHeld.hp}")
     }
     fun feuer(){

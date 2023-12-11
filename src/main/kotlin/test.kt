@@ -1,9 +1,21 @@
 fun main() {
 //
 //println(FEUER)
-
-    println(SPIELNAME)
-
-println(GEWONNEN)
+GEGNER.sniper()
+hp()
+    GEGNER.sniper()
+    hp()
+    GEGNER.sniper()
+    hp()
+    GEGNER.sniper()
+    hp()
+    GEGNER.sniper()
+    hp()
+    GEGNER.sniper()
+    hp()
+    GEGNER.sniper()
+    hp()
+    GEGNER.sniper()
+    hp()
 
 }
