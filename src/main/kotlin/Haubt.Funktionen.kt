@@ -51,7 +51,7 @@ fun runde() {
 
         println(
             """GEGNER :
-        | ${GEGNER.name}""".trimMargin()
+        |1 - ${GEGNER.name}""".trimMargin()
         )
         println("\u001B[32m"+"╔══════════════════════╗")
         println("╠--------RUNDE $runde-------╣")
