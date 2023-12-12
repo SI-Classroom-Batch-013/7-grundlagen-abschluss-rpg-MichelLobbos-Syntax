@@ -3,10 +3,12 @@ package Held
 import ARCHERMENÜ
 import BARBARMENÜ
 import BEUTEL
+
 import Gegner
 import HELDENMENÜ
 import SNIPERSCHUß
 import WIZARDMENÜ
+import beutelGenutzt
 
 open class Held(var name: String, var hp: Int) {
 
@@ -38,46 +40,60 @@ open class Held(var name: String, var hp: Int) {
 
 
     fun beutelNutzen() {
-        println("Beutel : ")
-        println(BEUTEL)
+        if (beutelGenutzt) {
+            println("Der Beutel wurde bereits in dieser Runde verwendet.")
+//            when (name) {
+//                "Barbar" -> BARBAREN.
+//                "Archer" ->
+//                "Wizard" ->
+//            }
 
-        while (true) {
-            if (BEUTEL.count { it == 'X' } == 2) {
-                println("Beutel Leer !!! ")
-                break
-            }
+            return
+        }
 
-            var gesucht = readln()
-            when (gesucht) {
-                "1" -> {
-                    println("$name hat VITAMIN genommen. Seine Aktionen werden aktualisiert.")
-                    when (name) {
-                        "Barbar" -> BARBARMENÜ = HELDENMENÜ
-                        "Archer" -> ARCHERMENÜ = HELDENMENÜ
-                        "Wizard" -> WIZARDMENÜ = HELDENMENÜ
-                    }
-                    BEUTEL = BEUTEL.replace("1 -  VITAMINE * 1", "X -  VITAMINE  Fertig")
+        beutelGenutzt = true
+            println("Beutel : ")
+            println(BEUTEL)
+
+            while (true) {
+                if (BEUTEL.count { it == 'X' } == 2) {
+                    println("Beutel Leer !!! ")
                     break
                 }
 
-                "2" -> {
-                    println("$name hat Heiltrank benutzt. $name tankt 200 HP Punkte.")
-                    hp += 200
-                    when {
-                        "2 -  Heiltrank  * 2" in BEUTEL -> BEUTEL =
-                            BEUTEL.replace("2 -  Heiltrank  * 2", "2 -  Heiltrank  * 1")
-
-                        "2 -  Heiltrank  * 1" in BEUTEL -> BEUTEL =
-                            BEUTEL.replace("2 -  Heiltrank  * 1", "X -  Heiltrank  Fertig")
+                var gesucht = readln()
+                when (gesucht) {
+                    "1" -> {
+                        println("$name hat VITAMIN genommen. Seine Aktionen werden aktualisiert.")
+                        when (name) {
+                            "Barbar" -> BARBARMENÜ = HELDENMENÜ
+                            "Archer" -> ARCHERMENÜ = HELDENMENÜ
+                            "Wizard" -> WIZARDMENÜ = HELDENMENÜ
+                        }
+                        BEUTEL = BEUTEL.replace("1 -  VITAMINE * 1", "X -  VITAMINE  Fertig")
+                        //BEUTELGENUTZT = true
+                        break
                     }
-                    break
-                }
 
-                else -> {
-                    println("Ungültige Eingabe. Bitte wählen Sie 1 oder 2.")
-                    // Hier kannst du weitere Aktionen für den Fall einer ungültigen Eingabe hinzufügen.
+                    "2" -> {
+                        println("$name hat Heiltrank benutzt. $name tankt 200 HP Punkte.")
+                        //BEUTELGENUTZT = true
+                        hp += 200
+                        when {
+                            "2 -  Heiltrank  * 2" in BEUTEL -> BEUTEL =
+                                BEUTEL.replace("2 -  Heiltrank  * 2", "2 -  Heiltrank  * 1")
+
+                            "2 -  Heiltrank  * 1" in BEUTEL -> BEUTEL =
+                                BEUTEL.replace("2 -  Heiltrank  * 1", "X -  Heiltrank  Fertig")
+                        }
+                        break
+                    }
+
+                    else -> {
+                        println("Ungültige Eingabe. Bitte wählen Sie 1 oder 2.")
+
+                    }
                 }
             }
         }
     }
-}

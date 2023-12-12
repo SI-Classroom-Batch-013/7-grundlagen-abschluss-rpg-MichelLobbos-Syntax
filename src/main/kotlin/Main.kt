@@ -2,6 +2,8 @@ import Held.Archer
 import Held.Barbaren
 import Held.Held
 import Held.Wizard
+
+var beutelGenutzt = false
 var FEUER ="\u001B[31m"+"""                                                                                                   .''.
                                                                        .''.      .        *''*    :_\/_:     .
                                                                       :_\/_:   _\(/_  .:.*_\/_*   : /\ :  .'.:.'.

@@ -30,6 +30,7 @@ fun runde() {
         nummer++
     }
     while (true) {
+        beutelGenutzt = false
         SNIPERSCHUß = 700
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
             println("${GEGNER.name} würde besiegt")
@@ -64,16 +65,17 @@ fun runde() {
 
         println("------------------------")
 
-        if (BARBAREN.hp > 0) {
-            println("${BARBAREN.name}"+" ist dran")
+        if (BARBAREN.hp > 0){
+            println(BARBAREN.name +" ist dran")
+            var barbarWhile = false
 
-            while (true) {
+            while (!beutelGenutzt) {
                 println(
                     """Beutel öffnen? (Y/N)
-            |Vorsicht wenn Barbar der Beutel öffnet, kann er seine Aktionen erst in der nächsten Runde nutzen!!
+            |Vorsicht, Beutel darf nur von einem Held pro Runde öffnen ,wenn ein Held der Beutel öffnet, kann er seine Aktionen erst in der nächsten Runde nutzen!!
         """.trimMargin()
                 )
-
+                barbarWhile = !barbarWhile
                 var öffnen = readln()
 
                 when (öffnen.toLowerCase()) {
@@ -92,6 +94,9 @@ fun runde() {
 
                     }
                 }
+            }
+            if (!barbarWhile){
+                BARBAREN.aktionAussuchenBarbar()
             }
         }
 
@@ -114,9 +119,14 @@ fun runde() {
 
         if (ARCHER.hp > 0) {
             println("${ARCHER.name} ist dran")
-
-            while (true) {
-                println("Beutel öffnen? (Y/N)")
+            var archerWhile = false
+            while (!beutelGenutzt) {
+                println(
+                    """Beutel öffnen? (Y/N)
+            |Vorsicht, Beutel darf nur von einem Held pro Runde öffnen ,wenn ein Held der Beutel öffnet, kann er seine Aktionen erst in der nächsten Runde nutzen!!
+        """.trimMargin()
+                )
+                archerWhile = !archerWhile
                 var öffnen = readln()
 
                 when (öffnen.toLowerCase()) {
@@ -135,6 +145,9 @@ fun runde() {
 
                     }
                 }
+            }
+            if (!archerWhile){
+                ARCHER.aktionAussuchenArcher()
             }
         }
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp <= 0) {
@@ -157,9 +170,15 @@ fun runde() {
 
         if (WIZARD.hp > 0) {
             println("${WIZARD.name} ist dran")
+            var wizardWhile = false
 
-            while (true) {
-                println("Beutel öffnen? (Y/N)")
+            while (!beutelGenutzt) {
+                println(
+                    """Beutel öffnen? (Y/N)
+            |Vorsicht, Beutel darf nur von einem Held pro Runde öffnen ,wenn ein Held der Beutel öffnet, kann er seine Aktionen erst in der nächsten Runde nutzen!!
+        """.trimMargin()
+                )
+                wizardWhile = !wizardWhile
                 var öffnen = readln()
 
                 when (öffnen.toLowerCase()) {
@@ -178,6 +197,9 @@ fun runde() {
 
                     }
                 }
+            }
+            if (!wizardWhile){
+                WIZARD.aktionAussuchenWizard()
             }
         }
 

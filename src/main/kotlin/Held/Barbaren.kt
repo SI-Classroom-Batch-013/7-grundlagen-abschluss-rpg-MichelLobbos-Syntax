@@ -47,7 +47,7 @@ open class Barbaren(name: String) : Held(name, 750) {
 
     }
 
-    fun aktionAussuchenBarbar() {
+    open fun aktionAussuchenBarbar() {
 
         println("Barbar soll angreifen. Wähle die Attacke per Zahleneingabe aus!")
 
