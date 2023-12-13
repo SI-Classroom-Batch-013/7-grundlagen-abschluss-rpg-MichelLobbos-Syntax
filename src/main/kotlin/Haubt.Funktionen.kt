@@ -21,6 +21,10 @@ fun sleep() {
 
 
 fun runde() {
+    val sounds = Sounds()
+    val gibIhm = "src/main/kotlin/Sounds/Vaderkeborg 21 (online-audio-converter.com).wav"
+    sounds.playSound(gibIhm)
+
 
     var runde = 1
     var nummer = 1
@@ -63,9 +67,11 @@ fun runde() {
 
 
 
-        println("------------------------")
+
 
         if (BARBAREN.hp > 0){
+            println("------------------------")
+
             println(BARBAREN.name +" ist dran")
             var barbarWhile = false
 
@@ -118,6 +124,8 @@ fun runde() {
         }
 
         if (ARCHER.hp > 0) {
+            println("------------------------")
+
             println("${ARCHER.name} ist dran")
             var archerWhile = false
             while (!beutelGenutzt) {
@@ -169,6 +177,8 @@ fun runde() {
         }
 
         if (WIZARD.hp > 0) {
+            println("------------------------")
+
             println("${WIZARD.name} ist dran")
             var wizardWhile = false
 
@@ -222,6 +232,7 @@ fun runde() {
 
 
         }
+        println("------------------------")
 
         if (GEGNER.name == "Böser Goblin" && GEGNER.hp > 0) {
             println("Vorsicht Böser Goblin ist dran")

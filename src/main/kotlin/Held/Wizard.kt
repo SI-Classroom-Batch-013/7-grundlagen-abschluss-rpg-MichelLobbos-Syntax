@@ -42,7 +42,6 @@ open class Wizard (name: String) : Held(name, 450) {
             GEGNER.hp = 0
 
         }
-
     }
 
     fun aktionAussuchenWizard() {
@@ -100,3 +99,4 @@ open class Wizard (name: String) : Held(name, 450) {
     }
 
 }
+

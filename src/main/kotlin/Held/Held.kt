@@ -64,7 +64,7 @@ open class Held(var name: String, var hp: Int) {
                 var gesucht = readln()
                 when (gesucht) {
                     "1" -> {
-                        println("$name hat VITAMIN genommen. Seine Aktionen werden aktualisiert.")
+                        println("$name hat VITAMIN genommen. Seine Aktionen sind wieder verfügbar.")
                         when (name) {
                             "Barbar" -> BARBARMENÜ = HELDENMENÜ
                             "Archer" -> ARCHERMENÜ = HELDENMENÜ
