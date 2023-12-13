@@ -42,11 +42,7 @@ open class Held(var name: String, var hp: Int) {
     fun beutelNutzen() {
         if (beutelGenutzt) {
             println("Der Beutel wurde bereits in dieser Runde verwendet.")
-//            when (name) {
-//                "Barbar" -> BARBAREN.
-//                "Archer" ->
-//                "Wizard" ->
-//            }
+
 
             return
         }
