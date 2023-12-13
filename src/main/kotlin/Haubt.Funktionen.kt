@@ -225,6 +225,7 @@ fun runde() {
 
         }
         if (GEGNER.name == "Bika" && GEGNER.hp <= 0) {
+            println("Bika wurde besiegt")
             println(FEUER)
             println(GEWONNEN)
 

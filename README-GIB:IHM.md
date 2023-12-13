@@ -4,7 +4,7 @@
 <br>
 
 <p align="center">
-  <img src="img/barbar.archer.jpg" width="75%">
+  <img src="img/barbar.archer.jpg" width="60%">
 </p>
 
 
@@ -46,10 +46,13 @@
 
                    1000      300 (alle Helden)          200(alle)       600(ein Held)        100          50 weniger bei N-Angriff        100 weniger bei B-Angriff  
 
-> **Hinweis**: Die Helden kempfen zuerst gegen Böser Goblin, erst wenn Böser Goblin besiegt wird, kommt der BIKA 
+> **Hinweis**: Die Helden kempfen zuerst gegen Böser Goblin, erst wenn Böser Goblin besiegt wird, kommt der Bika. 
 
 
 <h3>Spiel zu Ende :</h3>
 
 + Bika besiegt   =>   Gewinnen
 + Alle Helden besiegt sind     =>   Verloren
+  <h3 align="center">...................................................................</h3>
+
+<h3 align="center">Viel Spaß beim spielen :D </h3>

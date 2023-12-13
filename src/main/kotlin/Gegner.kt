@@ -1,17 +1,21 @@
 open class Gegner(var name: String, var hp: Int, var gegnerSchadenWert: Int = 300) {
-var gegnerTot = false
-    fun tot(){
-    if (GEGNER.hp <= 0){
-        GEGNER.name = "Bika"
-        GEGNER.hp = 750
-    }
-    }
+//var gegnerTot = false
+//    fun tot(){
+//    if (GEGNER.hp <= 0){
+//        GEGNER.name = "Bika"
+//        GEGNER.hp = 750
+//    }
+//    }
 
     open fun angriff() {
         println("${GEGNER.name} greift alle Helden an, verursacht $gegnerSchadenWert Schaden.")
         for (held in HELDENLIST) {
             held.hp -= gegnerSchadenWert
-            println("${held.name} HP: ${held.hp} ")
+            if (held.hp > 0) {
+                println("${held.name} HP       : ${held.hp}")
+            } else {
+                println("${held.name} wurde besiegt!")
+            }
         }
     }
 
@@ -31,7 +35,7 @@ var gegnerTot = false
                 break
             }
         }
-        //println("${randomHeld.name} HP : ${randomHeld.hp}")
+
     }
     fun feuer(){
         println("${GEGNER.name} lasst  Feuer regen, allem wird 200 Schaden zugefügt (er trift sich selbst auch!). ")
